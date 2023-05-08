@@ -10,9 +10,9 @@ function Quote({ user }) {
   const [name, setName] = useState([])
   //url uses a fetch method from the facade and therefore needs a smaller url than the following (it attaches the url to the facade url)
   const url = "/api/ext/kanye"
-  const url1 = "https://mavle.dk/tomcat/carbon2count/api/ext/kanye"
-  const url2 = "https://mavle.dk/tomcat/carbon2count/api/ext/age"
-  const url3 = "https://mavle.dk/tomcat/carbon2count/api/ext/delete"
+  const url1 = "http://localhost:8080/carbon2count/api/ext/kanye"
+  const url2 = "http://localhost:8080/carbon2count/api/ext/age"
+  const url3 = "http://localhost:8080/carbon2count/api/ext/delete"
   // These urls are to be put into a setting.js file
 
   const fetchQuote = () => {

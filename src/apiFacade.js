@@ -1,5 +1,5 @@
-// const URL = "http://localhost:8080/backend";
-const URL = "https://mavle.dk/tomcat/carbon2count";
+const URL = "http://localhost:8080/carbon2count";
+// const URL = "https://mavle.dk/tomcat/carbon2count";
 
 function handleHttpErrors(res) {
  if (!res.ok) {
