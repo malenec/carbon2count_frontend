@@ -13,7 +13,13 @@ function Quote({ user }) {
   const url1 = "http://localhost:8080/carbon2count/api/ext/kanye"
   const url2 = "http://localhost:8080/carbon2count/api/ext/age"
   const url3 = "http://localhost:8080/carbon2count/api/ext/delete"
-  // These urls are to be put into a setting.js file
+
+    // These urls are to be put into a setting.js file, but for now they are here
+
+  // const url1 = "http://mavle.dk/tomcat/carbon2count/api/ext/kanye"
+  // const url2 = "http://mavle.dk/tomcat/carbon2count/api/ext/age"
+  // const url3 = "http://mavle.dk/tomcat/carbon2count/api/ext/delete"
+
 
   const fetchQuote = () => {
     facade.fetchData(url).then(res => {
