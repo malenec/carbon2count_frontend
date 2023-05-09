@@ -91,7 +91,7 @@ function Quote({ user }) {
 
   return (
     <div>
-
+      
       <h4> Type in your name, and we will predict your age</h4>
       <form onSubmit={handleSubmit}>
         <input type="text" value={name} onChange={handleChange} />

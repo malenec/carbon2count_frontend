@@ -16,7 +16,6 @@ function LogIn({ login }) {
 
   return (
     <div>
-      <h2>Login</h2>
       <form onChange={onChange} >
         <input placeholder="User Name" id="username" />
         <input placeholder="Password" id="password" />

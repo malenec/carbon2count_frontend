@@ -1,6 +1,5 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom';
-import Quote from "../components/Quote"
+import { NavLink } from 'react-router-dom';
 
 const Home = ({ user }) => {
 
@@ -8,7 +7,15 @@ const Home = ({ user }) => {
     <div>
       <h3>Home</h3>
       <h1> Welcome to CARBON2COUNT </h1>
-      <Quote user={user} />
+      {/* <Quote user={user} /> */}
+
+      {user.username === "" ? (<h4>Log in to see and create grocery lists </h4>) :
+        (<>
+      <NavLink to="/grocerylist">
+        <button>New List</button>
+      </NavLink>
+        
+        </>)}
 
     </div>
   );
