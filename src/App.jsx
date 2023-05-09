@@ -4,6 +4,7 @@ import facade from "./apiFacade";
 import Header from "./components/Header";
 
 import Content from "./components/Content";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false)

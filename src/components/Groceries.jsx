@@ -1,14 +1,14 @@
-import {useState} from 'react'
+import { useState } from 'react'
 import SearchBar from './SearchBar'
 
 
 
-function Groceries({user}) {
+function Groceries({ user }) {
   return (
     <div>
-      <h1> Welcome to your list {user.username}</h1>
+      <h3 className='mt-5 mx-5 mb-5'> Velkommen til din indkøbsliste {user.username}</h3>
 
-    <SearchBar/>
+      <SearchBar />
 
 
     </div>
