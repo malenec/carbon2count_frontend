@@ -80,7 +80,7 @@ function SearchBar({groceries}) {
         </div>
         <div className='col-8'>
           {groceryList.map((grocery, index) => (
-            <GroceryLine  grocery={grocery} index={index} setDisable={setDisable} disable={disable}/>
+            <GroceryLine  grocery={grocery} groceryList={groceryList} setGroceryList={setGroceryList} index={index} setDisable={setDisable} disable={disable}/>
           ))}
 
 

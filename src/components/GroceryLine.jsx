@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-const GroceryLine = ({grocery,index,setDisable, disable}) => {
+const GroceryLine = ({grocery,groceryList,setGroceryList,index,setDisable, disable}) => {
 
     const [toggleKgInput, setToggleKgInput] = useState(true);
     const [inputKg, setInputKg] = useState(1)
@@ -22,6 +22,15 @@ const GroceryLine = ({grocery,index,setDisable, disable}) => {
         setDisable(!disable)
        
       };
+
+    const deleteGrocery = (index) => {
+        const newGroceryList = [...groceryList];
+        newGroceryList.splice(index, 1);
+        setGroceryList(newGroceryList);
+        if(disable){
+            setDisable(false)
+        }
+    }
 
   return (
     
@@ -66,7 +75,7 @@ const GroceryLine = ({grocery,index,setDisable, disable}) => {
           <td><h5>{carbonTotal.toFixed(2)} Kg CO<sub>2</sub></h5></td>
           <td><h5>{grocery.dskCategory}</h5></td>
 
-          <td><button onClick={handleToggleClick}  className='mx-2'>+</button><button>-</button></td>
+          <td><button onClick={handleToggleClick}  className='mx-2'>+</button><button onClick={() => deleteGrocery(index)}>-</button></td>
           <td></td>
         </tr>
       </tbody>
