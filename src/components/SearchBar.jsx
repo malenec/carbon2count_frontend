@@ -19,7 +19,7 @@ function SearchBar({groceries}) {
     );
     setFilteredGroceries(filtered);
     setSearchInput(searchValue);
-    setDisable(!disable)
+    
   };
 
 
@@ -66,6 +66,7 @@ function SearchBar({groceries}) {
                         setselectedGrocery(grocery);
                         setGroceryList([...groceryList, grocery]);
                         setFilteredGroceries(null);
+                        setDisable(!disable)
                       }}
                     >
                       {grocery.name}
