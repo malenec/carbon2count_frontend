@@ -65,7 +65,7 @@ function SearchBar({groceries}) {
                       }}
                     >
                       {grocery.name}
-                      <p style={{ margin: '0', fontSize: '12px' }}>{grocery.foodcategory}</p>
+                      <p style={{ margin: '0', fontSize: '12px' }}>{grocery.dskCategory}</p>
                     </div>
                   ))}
                 </div>
@@ -99,7 +99,7 @@ function SearchBar({groceries}) {
                       />
                     </td>
                     <td><h5>{grocery.name}</h5></td>
-                    <td><h5>{grocery.foodcategory}</h5></td>
+                    <td><h5>{grocery.dskCategory}</h5></td>
 
                     <td><button className='mx-2'>+</button><button>-</button></td>
                     <td></td>

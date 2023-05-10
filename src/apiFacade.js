@@ -1,5 +1,5 @@
-const URL = "http://localhost:8080/carbon2count";
-const URL2 = "https://mavle.dk/tomcat/carbon2count";
+//const URL = "http://localhost:8080/carbon2count";
+const URL = "https://mavle.dk/tomcat/carbon2count";
 
 
 function handleHttpErrors(res) {
@@ -69,7 +69,7 @@ function readJwtToken (token) {
 }
 
 const getAllGroceries = (setGroceries) => {
-  fetch("https://mavle.dk/tomcat/carbon2count/api/produce")
+  fetch(URL + "/api/produce")
     .then(res => res.json())
     .then((data) => {
       setGroceries(data);
