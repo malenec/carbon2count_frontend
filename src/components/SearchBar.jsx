@@ -9,8 +9,6 @@ function SearchBar({groceries}) {
   const [groceryList, setGroceryList] = useState([]);
   const [disable, setDisable] = useState(false);
 
-  //const groceries = [{ name: 'Agurk, rå', foodcategory: 'Grøntsager' }, { name: 'Drueagurk (sylteagurk), rå', foodcategory: 'Grøntsager' }, { name: 'Agurk, syltet', foodcategory: 'Frugt/grøntsagsprodukter' }, { name: 'Tomat, uspec., rå', foodcategory: 'Grøntsager' }, { name: 'Tomat, soltørret', foodcategory: 'Grøntsager' }, { name: 'Tomatsuppe, spiseklar', foodcategory: 'Tilberedte/konserverede fødevarer', }, { name: 'Tun i tomat, konserves', foodcategory: 'Fisk og skaldyr' }, { name: 'Soltørrede tomater', foodcategory: 'Frugt/grøntsagsprodukter' },];
-
   const handleChange = (e) => {
     e.preventDefault();
     const searchValue = e.target.value;
