@@ -1,5 +1,6 @@
 const URL = "http://localhost:8080/carbon2count";
-// const URL = "https://mavle.dk/tomcat/carbon2count";
+const URL2 = "https://mavle.dk/tomcat/carbon2count";
+
 
 function handleHttpErrors(res) {
  if (!res.ok) {
@@ -67,6 +68,16 @@ function readJwtToken (token) {
     return JSON.parse(jsonPayload);
 }
 
+const getAllGroceries = (setGroceries) => {
+  fetch("https://mavle.dk/tomcat/carbon2count/api/produce")
+    .then(res => res.json())
+    .then((data) => {
+      setGroceries(data);
+      console.log(data);
+    })
+    .catch((err) => console.log(err));
+};
+
   return {
       makeOptions,
       setToken,
@@ -75,11 +86,16 @@ function readJwtToken (token) {
       login,
       logout,
       fetchData,
-      readJwtToken
+      readJwtToken,
+      getAllGroceries,
   }
  }
 
  const facade = apiFacade();
+
+
+
+
 
  export default facade;
  

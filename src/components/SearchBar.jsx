@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { Button } from 'react-bootstrap';
 
-function SearchBar() {
+function SearchBar({groceries}) {
   const [searchInput, setSearchInput] = useState('');
   const [filteredGroceries, setFilteredGroceries] = useState(null);
   const [selectedGrocery, setselectedGrocery] = useState("navn", "kateogri");
   const [groceryList, setGroceryList] = useState([]);
 
-  const groceries = [{ name: 'Agurk, rå', foodcategory: 'Grøntsager' }, { name: 'Drueagurk (sylteagurk), rå', foodcategory: 'Grøntsager' }, { name: 'Agurk, syltet', foodcategory: 'Frugt/grøntsagsprodukter' }, { name: 'Tomat, uspec., rå', foodcategory: 'Grøntsager' }, { name: 'Tomat, soltørret', foodcategory: 'Grøntsager' }, { name: 'Tomatsuppe, spiseklar', foodcategory: 'Tilberedte/konserverede fødevarer', }, { name: 'Tun i tomat, konserves', foodcategory: 'Fisk og skaldyr' }, { name: 'Soltørrede tomater', foodcategory: 'Frugt/grøntsagsprodukter' },];
+  //const groceries = [{ name: 'Agurk, rå', foodcategory: 'Grøntsager' }, { name: 'Drueagurk (sylteagurk), rå', foodcategory: 'Grøntsager' }, { name: 'Agurk, syltet', foodcategory: 'Frugt/grøntsagsprodukter' }, { name: 'Tomat, uspec., rå', foodcategory: 'Grøntsager' }, { name: 'Tomat, soltørret', foodcategory: 'Grøntsager' }, { name: 'Tomatsuppe, spiseklar', foodcategory: 'Tilberedte/konserverede fødevarer', }, { name: 'Tun i tomat, konserves', foodcategory: 'Fisk og skaldyr' }, { name: 'Soltørrede tomater', foodcategory: 'Frugt/grøntsagsprodukter' },];
 
   const handleChange = (e) => {
     e.preventDefault();
