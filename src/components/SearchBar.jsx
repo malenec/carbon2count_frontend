@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Button } from 'react-bootstrap';
+import GroceryLine from './GroceryLine';
 
 function SearchBar({groceries}) {
   const [searchInput, setSearchInput] = useState('');
   const [filteredGroceries, setFilteredGroceries] = useState(null);
   const [selectedGrocery, setselectedGrocery] = useState("navn", "kateogri");
   const [groceryList, setGroceryList] = useState([]);
+  const [disable, setDisable] = useState(false);
 
   //const groceries = [{ name: 'Agurk, rå', foodcategory: 'Grøntsager' }, { name: 'Drueagurk (sylteagurk), rå', foodcategory: 'Grøntsager' }, { name: 'Agurk, syltet', foodcategory: 'Frugt/grøntsagsprodukter' }, { name: 'Tomat, uspec., rå', foodcategory: 'Grøntsager' }, { name: 'Tomat, soltørret', foodcategory: 'Grøntsager' }, { name: 'Tomatsuppe, spiseklar', foodcategory: 'Tilberedte/konserverede fødevarer', }, { name: 'Tun i tomat, konserves', foodcategory: 'Fisk og skaldyr' }, { name: 'Soltørrede tomater', foodcategory: 'Frugt/grøntsagsprodukter' },];
 
@@ -17,6 +19,7 @@ function SearchBar({groceries}) {
     );
     setFilteredGroceries(filtered);
     setSearchInput(searchValue);
+    setDisable(!disable)
   };
 
 
@@ -28,6 +31,7 @@ function SearchBar({groceries}) {
           <div className='my-4'>
             <div className='mb-4' style={{ position: 'relative' }}>
               <input
+                disabled= {disable}
                 type="text"
                 placeholder="fx. Tomat"
                 onChange={handleChange}
@@ -77,39 +81,7 @@ function SearchBar({groceries}) {
         </div>
         <div className='col-8'>
           {groceryList.map((grocery, index) => (
-            <div key={index}>
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row"> {index + 1}</th>
-                    <td>
-                      <input
-                        type="number"
-                        placeholder="kg"
-                        style={{ minHeight: '25px', padding: '5px' }}
-                      />
-                    </td>
-                    <td><h5>{grocery.name}</h5></td>
-                    <td><h5>{grocery.dskCategory}</h5></td>
-
-                    <td><button className='mx-2'>+</button><button>-</button></td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-
-
-            </div>
-
+            <GroceryLine  grocery={grocery} index={index} setDisable={setDisable} disable={disable}/>
           ))}
 
 
