@@ -1,10 +1,10 @@
 import { useState } from 'react'
 
-const GroceryLine = ({ grocery, groceryList, setGroceryList, index, setDisable, disable, theList, setTheList }) => {
+const GroceryLine = ({ grocery, groceryList, setGroceryList, index, setDisable, disable}) => {
 
   const [toggleKgInput, setToggleKgInput] = useState(true);
   const [inputKg, setInputKg] = useState(1)
-  const [theGrocery, setTheGrocery] = useState({})
+ 
 
 
 
@@ -18,16 +18,21 @@ const GroceryLine = ({ grocery, groceryList, setGroceryList, index, setDisable, 
 
 
   const handleAddClick = () => {
-    const newGrocery = { "grocery_id": grocery.idRa500prod, "grocery_quantity": inputKg }
-    setTheGrocery(newGrocery)
-    setTheList([...theList, newGrocery])
-    console.log(theList);
+    const newGrocery = {
+      ...grocery,
+      inputKg: inputKg,
+    };
+
+    const updatedGroceryList = [...groceryList];
+    updatedGroceryList[index] = newGrocery;
+    setGroceryList(updatedGroceryList);
+
   }
   const handleToggleClick = (grocery) => {
     setToggleKgInput(!toggleKgInput);
     setDisable(!disable)
     handleAddClick()
-
+    console.log(groceryList)
   };
 
   const deleteGrocery = (index) => {
