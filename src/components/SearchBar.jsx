@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import GroceryLine from './GroceryLine';
+import GroceryListGraph from './GroceryListGraph';
 
 function SearchBar({groceries}) {
   const [searchInput, setSearchInput] = useState('');
@@ -53,6 +54,9 @@ function SearchBar({groceries}) {
                     minWidth: '205px'
                   }}
                 >
+                  <div>
+                  <GroceryListGraph />
+                  </div>
                   {filteredGroceries.map((grocery, index) => (
                     <div
                       key={index}

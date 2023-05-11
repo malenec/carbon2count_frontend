@@ -22,6 +22,7 @@ const GroceryLine = ({grocery,groceryList,setGroceryList,index,setDisable, disab
         setDisable(!disable)
        
       };
+      
 
     const deleteGrocery = (index) => {
         const newGroceryList = [...groceryList];
