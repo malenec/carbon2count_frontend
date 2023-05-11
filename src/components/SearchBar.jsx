@@ -56,9 +56,7 @@ function SearchBar({ groceries, user }) {
                     minWidth: '205px'
                   }}
                 >
-                  <div>
-                    <GroceryListGraph />
-                  </div>
+
                   {filteredGroceries.map((grocery, index) => (
                     <div
                       key={index}
