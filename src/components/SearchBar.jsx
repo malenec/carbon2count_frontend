@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import GroceryLine from './GroceryLine';
-import GroceryListGraph from './GroceryListGraph';
+import GroceryListGraph from './GroceryLine';
 
 function SearchBar({groceries}) {
   const [searchInput, setSearchInput] = useState('');
@@ -9,6 +9,7 @@ function SearchBar({groceries}) {
   const [selectedGrocery, setselectedGrocery] = useState("navn", "kateogri");
   const [groceryList, setGroceryList] = useState([]);
   const [disable, setDisable] = useState(false);
+  const [theList, setTheList] = useState([]);
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -88,6 +89,7 @@ function SearchBar({groceries}) {
           ))}
 
 
+            <AddList theList={theList} user={user} />
         </div>
 
       </div>
