@@ -7,10 +7,9 @@ import GroceryLine from './GroceryLine';
 function SearchBar({ groceries, user }) {
   const [searchInput, setSearchInput] = useState('');
   const [filteredGroceries, setFilteredGroceries] = useState(null);
-  const [selectedGrocery, setselectedGrocery] = useState("navn", "kateogri");
   const [groceryList, setGroceryList] = useState([]);
   const [disable, setDisable] = useState(false);
-  const [theList, setTheList] = useState([]);
+
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -28,7 +27,7 @@ function SearchBar({ groceries, user }) {
   return (
     <div className='container'>
       <div className='row'>
-        <div className='col-4'>
+        <div className='col-3'>
           <h5> Søg efter fødevarer </h5>
           <div className='my-4'>
             <div className='mb-4' style={{ position: 'relative' }}>
@@ -66,7 +65,6 @@ function SearchBar({ groceries, user }) {
                       }}
                       onClick={() => {
                         setSearchInput(grocery.name);
-                        setselectedGrocery(grocery);
                         setGroceryList([...groceryList, grocery]);
                         setFilteredGroceries(null);
                         setDisable(!disable)
@@ -83,14 +81,14 @@ function SearchBar({ groceries, user }) {
 
           </div>
         </div>
-        <div className='col-8'>
+        <div className='col-9'>
           {groceryList.map((grocery, index) => (
             <GroceryLine grocery={grocery} groceryList={groceryList} setGroceryList={setGroceryList} index={index} setDisable={setDisable} disable={disable}
             />
           ))}
 
 
-          <AddList thelist={theList} user={user} />
+          <AddList groceryList={groceryList} user={user} />
         </div>
 
       </div>
