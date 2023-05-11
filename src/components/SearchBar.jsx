@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import GroceryLine from './GroceryLine';
-import AddList from './AddList';
+import GroceryListGraph from './GroceryLine';
 
-function SearchBar({ groceries }) {
+function SearchBar({groceries}) {
   const [searchInput, setSearchInput] = useState('');
   const [filteredGroceries, setFilteredGroceries] = useState(null);
   const [selectedGrocery, setselectedGrocery] = useState("navn", "kateogri");
@@ -19,7 +19,7 @@ function SearchBar({ groceries }) {
     );
     setFilteredGroceries(filtered);
     setSearchInput(searchValue);
-
+    
   };
 
 
@@ -31,7 +31,7 @@ function SearchBar({ groceries }) {
           <div className='my-4'>
             <div className='mb-4' style={{ position: 'relative' }}>
               <input
-                disabled={disable}
+                disabled= {disable}
                 type="text"
                 placeholder="fx. Tomat"
                 onChange={handleChange}
@@ -55,6 +55,9 @@ function SearchBar({ groceries }) {
                     minWidth: '205px'
                   }}
                 >
+                  <div>
+                  <GroceryListGraph />
+                  </div>
                   {filteredGroceries.map((grocery, index) => (
                     <div
                       key={index}
@@ -82,12 +85,9 @@ function SearchBar({ groceries }) {
         </div>
         <div className='col-8'>
           {groceryList.map((grocery, index) => (
-
-            <GroceryLine grocery={grocery} groceryList={groceryList} setGroceryList={setGroceryList} index={index} setDisable={setDisable} disable={disable} theList={theList} setTheList={setTheList}
-            />
-
-
+            <GroceryLine  grocery={grocery} groceryList={groceryList} setGroceryList={setGroceryList} index={index} setDisable={setDisable} disable={disable}/>
           ))}
+
 
           <AddList thelist={theList} />
         </div>
