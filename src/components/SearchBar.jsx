@@ -4,6 +4,7 @@ import { Button } from 'react-bootstrap';
 import GroceryLine from './GroceryLine';
 
 
+
 function SearchBar({ groceries, user }) {
   const [searchInput, setSearchInput] = useState('');
   const [filteredGroceries, setFilteredGroceries] = useState(null);

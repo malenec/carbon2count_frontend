@@ -15,7 +15,7 @@ function Groceries({ user }) {
     <div>
       <h3 className='mt-5 mx-5 mb-5'> Velkommen til din indkøbsliste {user.username}</h3>
 
-      <SearchBar groceries={groceries}/>
+      <SearchBar groceries={groceries} user={user} />
 
 
     </div>
