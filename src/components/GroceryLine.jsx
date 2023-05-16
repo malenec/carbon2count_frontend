@@ -36,6 +36,7 @@ const GroceryLine = ({ grocery, groceryList, setGroceryList, index, setDisable, 
 
     const updatedGroceryList = [...groceryList];
     updatedGroceryList[index] = newGrocery;
+    console.log(index)
     setGroceryList(updatedGroceryList);
 
   }
@@ -103,7 +104,7 @@ const GroceryLine = ({ grocery, groceryList, setGroceryList, index, setDisable, 
                 <Button onClick={handleToggleClick} className="mx-2">
                   {pencilIcon}
                 </Button>
-                <Button onClick={deleteGrocery}>
+                <Button onClick={() => deleteGrocery(parseInt(index))}>
                   {trashIcon}
                 </Button>
               </td>

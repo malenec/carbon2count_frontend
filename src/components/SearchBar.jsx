@@ -84,9 +84,9 @@ function SearchBar({ groceries, user }) {
           </div>
         </div>
         <div className='col-9'>
-        <ListGraph groceryList={groceryList} />
+          <ListGraph groceryList={groceryList} />
           {groceryList.map((grocery, index) => (
-            <GroceryLine grocery={grocery} groceryList={groceryList} setGroceryList={setGroceryList} index={index} setDisable={setDisable} disable={disable}
+            <GroceryLine index={index.toString()} grocery={grocery} groceryList={groceryList} setGroceryList={setGroceryList} key={index} setDisable={setDisable} disable={disable}
             />
           ))}
 
