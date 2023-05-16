@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 function ShowAllLists({ user }) {
   const [groceryList, setGroceryList] = useState([]);
   const URL = "https://mavle.dk/tomcat/carbon2count/";
-  
+
   const [chosenList, setChosenList] = useState([]);
 
   const arrow = (
@@ -28,11 +28,16 @@ function ShowAllLists({ user }) {
     getAllGroceries(setGroceryList);
   }, []);
 
-  const showList = (groceryId) => {
-    console.log("show list " + groceryId);
+  useEffect(() => {
+    console.log("Chosen List:", chosenList);
+  }, [chosenList]);
 
+  const showList = (groceryLineDTOs) => {
+    console.log("Grocery Line DTOs:", groceryLineDTOs);
+    setChosenList(groceryLineDTOs);
     getAllGroceries(setGroceryList);
   };
+
 
   const getAllGroceries = (setGroceryList) => {
     fetch(URL + "/api/grocerylist/all/" + user.username)
@@ -55,15 +60,10 @@ function ShowAllLists({ user }) {
                   <tr key={index}>
                     <td>
                       <div className="mx-2">
-                        {groceryList.created}{" "}
+                        {groceryList.created}
                         <Button
                           className="btn btn-sm px-5 mx-4 my-2"
-                          onClick={() =>
-                            showList(
-                              groceryList.groceryLineDTOs[0].groceryListId
-                            )
-                          }
-                          id={groceryList.groceryLineDTOs[0].groceryListId}
+                          onClick={() => showList(groceryList.groceryLineDTOs)}
                         >
                           {arrow}
                         </Button>
@@ -75,7 +75,22 @@ function ShowAllLists({ user }) {
             </Table>
           </div>
           <div className="col-8">
-            
+            <p>
+                {chosenList.map((chosenList, index) => (
+                    <tr key={index}>
+                        <td>
+                            <div className="mx-2">
+                                {chosenList.groceryId}
+                                
+                            </div>
+                        </td>
+                    </tr>
+                ))}
+
+                            
+                        
+
+            </p>
           </div>
         </div>
       </Container>
