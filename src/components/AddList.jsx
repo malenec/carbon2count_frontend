@@ -1,10 +1,11 @@
 import React from 'react'
 import { Button } from 'react-bootstrap';
 import facade from '../apiFacade';
+import { NavLink } from 'react-router-dom';
 
 function AddList({ groceryList, user }) {
 
-    let URL = "https://mavle.dk/tomcat/carbon2count/";
+    const URL = "https://mavle.dk/tomcat/carbon2count/";
     //const URL = "http://localhost:8080/carbon2count/";
 
 
@@ -47,11 +48,16 @@ function AddList({ groceryList, user }) {
     return (
         <div>
             <div className='text-end'>
+                <NavLink to="/allgrocerylists">
                 <Button onClick={saveList} className="btn btn-success">Afslut og gem</Button>
+                </NavLink>
             </div>
 
         </div>
     )
 }
+
+
+          
 
 export default AddList
