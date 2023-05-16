@@ -28,7 +28,7 @@ function App() {
   return (
     <div>
       <Header user={user} loggedIn={loggedIn} login={login} logout={logout} />
-      <Content user={user} />
+      <Content user={user} loggedIn={loggedIn}/>
     </div>
   )
 
