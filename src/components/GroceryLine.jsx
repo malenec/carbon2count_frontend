@@ -31,7 +31,7 @@ const GroceryLine = ({ grocery, groceryList, setGroceryList, index, setDisable, 
   const handleAddClick = () => {
     const newGrocery = {
       ...grocery,
-      inputKg: inputKg,
+      inputKg: parseFloat(inputKg),
     };
 
     const updatedGroceryList = [...groceryList];

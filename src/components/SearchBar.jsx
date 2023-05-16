@@ -2,6 +2,7 @@ import AddList from './AddList';
 import { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import GroceryLine from './GroceryLine';
+import ListGraph from './ListGraph';
 
 
 
@@ -20,7 +21,7 @@ function SearchBar({ groceries, user }) {
     );
     setFilteredGroceries(filtered);
     setSearchInput(searchValue);
-    console.log(groceries);
+    // console.log(groceries);
 
   };
 
@@ -83,12 +84,14 @@ function SearchBar({ groceries, user }) {
           </div>
         </div>
         <div className='col-9'>
+        <ListGraph groceryList={groceryList} />
           {groceryList.map((grocery, index) => (
             <GroceryLine grocery={grocery} groceryList={groceryList} setGroceryList={setGroceryList} index={index} setDisable={setDisable} disable={disable}
             />
           ))}
 
-
+          
+          {/* {console.table(groceryList)} */}
           <AddList groceryList={groceryList} user={user} />
         </div>
 
