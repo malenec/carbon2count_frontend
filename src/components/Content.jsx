@@ -4,6 +4,7 @@ import Home from "../routes/Home";
 import About from "../routes/About";
 import GroceryList from "../routes/GroceryList";
 import AllGroceryLists from "../routes/AllGroceryLists";
+import Admin from "../routes/Admin";
 
 function Content({ user }) {
     return (
@@ -13,6 +14,7 @@ function Content({ user }) {
                 <Route path="/about" element={<About user={user} />} />
                 <Route path="/addgrocerylist" element={<GroceryList user={user} />} />
                 <Route path="/allgrocerylists" element={<AllGroceryLists user={user} />} />
+                <Route path='/admin' element={<Admin user={user} />} />
             </Routes>
         </div>
     )

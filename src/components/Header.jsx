@@ -14,11 +14,12 @@ const Header = ({ user, loggedIn, login, logout }) => {
 
         {!loggedIn ? (<LogIn login={login} />) :
             (<>
-                <li><NavLink to="/addgrocerylist">Opret Indkøbsliste</NavLink></li>
-                <li><NavLink to="/allgrocerylists">Se alle indkøbslister</NavLink></li>
-                <br />
+                {user.username === "admin" ? (<li><NavLink to="/admin">Admin</NavLink></li>) : (<>
+                    <li><NavLink to="/addgrocerylist">Opret Indkøbsliste</NavLink></li>
+                    <li><NavLink to="/allgrocerylists">Se alle indkøbslister</NavLink></li>
+                    <br />
+                </>)}
                 <LoggedIn user={user} logout={logout} />
-
             </>)}
     </ul>
     )
