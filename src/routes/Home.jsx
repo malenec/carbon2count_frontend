@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
+import ChartComponent from '../components/ChartComponent';
 
 const Home = ({ user }) => {
 
@@ -7,6 +8,8 @@ const Home = ({ user }) => {
     <div>
       <h3>Home</h3>
       <h1> Welcome to CARBON2COUNT </h1>
+      <ChartComponent/>
+
 
       {user.username === "" ? (<h4>Log in to see and create grocery lists </h4>) :
         (<>
