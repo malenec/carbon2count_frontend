@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Table, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
+import ShowLineChart from "./ShowLineChart";
 
 function ShowAllLists({ user }) {
   const [groceryList, setGroceryList] = useState([]);
@@ -91,6 +92,7 @@ function ShowAllLists({ user }) {
                         
 
             </p>
+            <ShowLineChart/>
           </div>
         </div>
       </Container>
