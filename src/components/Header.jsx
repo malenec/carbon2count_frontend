@@ -8,8 +8,8 @@ import LoggedIn from './LoggedIn.jsx'
 const Header = ({ user, loggedIn, login, logout }) => {
 
     return (<ul className="header">
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/about">About</NavLink></li>
+        <li><NavLink to="/">Forside</NavLink></li>
+        <li><NavLink to="/about">Om</NavLink></li>
 
 
         {!loggedIn ? (<LogIn login={login} />) :
@@ -17,9 +17,10 @@ const Header = ({ user, loggedIn, login, logout }) => {
                 {user.username === "admin" ? (<li><NavLink to="/admin">Admin</NavLink></li>) : (<>
                     <li><NavLink to="/addgrocerylist">Opret Indkøbsliste</NavLink></li>
                     <li><NavLink to="/allgrocerylists">Se alle indkøbslister</NavLink></li>
-                    <br />
+                    <div className='mx-4 mt-2' style={{float: 'right'}}><LoggedIn user={user} logout={logout} /></div>
+                    
                 </>)}
-                <LoggedIn user={user} logout={logout} />
+                
             </>)}
     </ul>
     )

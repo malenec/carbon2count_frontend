@@ -15,11 +15,11 @@ function LogIn({ login }) {
   }
 
   return (
-    <div>
+    <div className='mx-4 mt-2' style={{float: 'right'}}>
       <form onChange={onChange} >
-        <input placeholder="User Name" id="username" />
-        <input placeholder="Password" id="password" />
-        <button onClick={performLogin}>Login</button>
+        <input placeholder="Email" id="username" />
+        <input placeholder="Adgangskode" id="password" />
+        <button onClick={performLogin}>Log ind</button>
       </form>
     </div>
   )
