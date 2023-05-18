@@ -9,7 +9,7 @@ function ChartComponent() {
 
   const fetchChartImage = async () => {
     try {
-      const response = await fetch('http://localhost:8080/carbon2count/api/chart/test');
+      const response = await fetch('https://mavle.dk/tomcat/carbon2count/api/chart/test');
       const data = await response.json();
       const chartImageData = data.chartImageData;
 
