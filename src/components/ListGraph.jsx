@@ -50,8 +50,8 @@ const ListGraph = ({groceryList}) => {
   return (
     <div>
       {/* https://quickchart.io/chart?c={type:'bar',data:{labels:["Q1","Q2","Q3","Q4"], datasets:[{label:'Users',data:[50,60,70,180]},{label:'Revenue',data:[100,200,300,400]}]}} */}
-      <img src= {`https://quickchart.io/chart?c={type:'bar',data:{labels:[${keys.map((key) => `"${key}"`).join(",")}], datasets:[{label:'Carbon pr kg',data:[${Array.from(categories.values())}]}]}}`}/>
-      {/* <img src= {`https://quickchart.io/chart?c={type:'bar',data:{labels:[${keys.map((key) => `"${key}"`).join(",")}], datasets:[{label:'Carbon pr kg',data:[${Array.from(categories.values())}], backgroundColor: getGradientFillHelper('vertical', ["#43CA91", "#43CA91", "#FFA538"]),}]}}`}/> */}
+      {/* <img src= {`https://quickchart.io/chart?c={type:'bar',data:{labels:[${keys.map((key) => `"${key}"`).join(",")}], datasets:[{label:'Carbon pr kg',data:[${Array.from(categories.values())}]}]}}`}/> */}
+      <img src= {`https://quickchart.io/chart?c={type:'bar',data:{labels:[${keys.map((key) => `"${key}"`).join(",")}], datasets:[{label:'Carbon pr kg',data:[${Array.from(categories.values())}], backgroundColor: getGradientFillHelper('vertical', ['rgb(75, 192, 192)', 'rgb(255, 200, 55)', 'rgb(255, 165, 55)'])}]}}`}/>
     </div>
   )
 }
