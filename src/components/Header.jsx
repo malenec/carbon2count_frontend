@@ -17,9 +17,9 @@ const Header = ({ user, loggedIn, login, logout }) => {
                 {user.username === "admin" ? (<li><NavLink to="/admin">Admin</NavLink></li>) : (<>
                     <li><NavLink to="/addgrocerylist">Opret Indkøbsliste</NavLink></li>
                     <li><NavLink to="/allgrocerylists">Se alle indkøbslister</NavLink></li>
-                    <div className='mx-4 mt-2' style={{float: 'right'}}><LoggedIn user={user} logout={logout} /></div>
                     
                 </>)}
+                <div className='mx-4 mt-2' style={{float: 'right'}}><LoggedIn user={user} logout={logout} /></div>
                 
             </>)}
     </ul>
